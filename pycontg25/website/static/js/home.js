@@ -7,6 +7,7 @@ const program = document.getElementById("program");
 const mainNav = document.getElementById("mainNav");
 const  mobileMenuBtn = document.getElementById("mobileMenuBtn");
 const countdownDate = new Date("2025-09-23T00:00:00Z").getTime();
+
 let now = new Date().getTime();
 let distance = countdownDate - now;
 

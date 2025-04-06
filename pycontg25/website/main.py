@@ -18,7 +18,9 @@ templates = Jinja2Templates(directory=templates_folder)
 
 year = datetime.now().year
 
-
+evnet_date = datetime(2025, 9, 23, 7, 30, 0)
+event_date_str = evnet_date.strftime("%d %B %Y at %H:%M")
+print(f"Event date: {event_date_str}")
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
     return templates.TemplateResponse(
@@ -26,6 +28,7 @@ def home(request: Request):
         name="home.html",
         context={
             "year": year,
+            "event_date": event_date_str,
         },
     )
 
