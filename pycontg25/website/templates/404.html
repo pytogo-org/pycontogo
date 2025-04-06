@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="../static/css/404.css">
+
+
+
+
+{% endblock %}
+
+{% block content %}
+
+<main class="error-container">
+    <div class="error-code">
+        <div class="error-digit">4</div>
+        <img src="../static/images/logo.png" alt="PyCon Togo Logo" class="error-logo">
+        <div class="error-digit">4</div>
+    </div>
+
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-message">Oops! The page you're looking for seems to have disappeared or doesn't exist. Perhaps
+    has gone off to discover the wild python in Africa!</p>
+
+
+    <div class="cta-buttons">
+        <a href="{{ url_for('home')}}" class="btn">Back to home page</a>
+        <a href="mailto:pycontogo@gmail.com" class="secondary-btn">Contact us</a>
+    </div>
+</main>
+<section class="page-content" id="program"></section>
+
+
+{% endblock %}

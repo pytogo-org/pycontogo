@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+{% block style %}
+<script src="../static/js/main.js" defer></script>
+<script src="../static/js/home.js" defer></script>
+
+{% endblock %}
+
 {% block content %}
 
 <section class="hero">
@@ -12,8 +18,8 @@
                 celebration of Python and its community.</p>
 
             <div class="hero-buttons">
-                <a href="#" class="btn btn-primary">Become a Speaker</a>
-                <a href="#" class="btn btn-outline">Join as Volunteer</a>
+                <a href="{{ url_for('comming_soon')}}" class="btn btn-primary">Become a Speaker</a>
+                <a href="{{ url_for('comming_soon')}}" class="btn btn-outline">Join as Volunteer</a>
             </div>
         </div>
 
@@ -21,19 +27,19 @@
             <h2 class="countdown-title">Event Countdown</h2>
             <div class="countdown-timer" id="countdown">
                 <div class="countdown-item">
-                    <span class="countdown-number" id="days">215</span>
+                    <span class="countdown-number" id="days"></span>
                     <span class="countdown-label">Days</span>
                 </div>
                 <div class="countdown-item">
-                    <span class="countdown-number" id="hours">08</span>
+                    <span class="countdown-number" id="hours"></span>
                     <span class="countdown-label">Hours</span>
                 </div>
                 <div class="countdown-item">
-                    <span class="countdown-number" id="minutes">45</span>
+                    <span class="countdown-number" id="minutes"></span>
                     <span class="countdown-label">Minutes</span>
                 </div>
                 <div class="countdown-item">
-                    <span class="countdown-number" id="seconds">30</span>
+                    <span class="countdown-number" id="seconds"></span>
                     <span class="countdown-label">Seconds</span>
                 </div>
             </div>
@@ -53,7 +59,6 @@
     </div>
 </section>
 
-<!-- Partners Section -->
 <section class="partners">
     <div class="container">
         <h2 class="section-title">Our Partners / Sponsors</h2>
@@ -62,7 +67,7 @@
 
                 <img src="../static/images/parteners/psf-logo.png" alt="PSF Logo">
             </div>
-    </div>
+        </div>
 </section>
 
 <!-- Sponsorship Section -->
@@ -114,7 +119,7 @@
             </div>
         </div>
         <div class="sponsor-btn-container">
-            <a href="#" class="btn btn-primary">Become a Sponsor</a>
+            <a href="{{ url_for('comming_soon')}}" class="btn btn-primary">Become a Sponsor</a>
         </div>
     </div>
 </section>
@@ -152,7 +157,7 @@
                 </li>
             </ul>
             <div class="cta-btn">
-                <a href="#" class="btn btn-secondary">Register as Volunteer</a>
+                <a href="{{ url_for('comming_soon')}}" class="btn btn-secondary">Register as Volunteer</a>
             </div>
         </div>
 
@@ -177,7 +182,7 @@
             </div>
 
             <div class="cta-btn">
-                <a href="#" class="btn btn-primary">Submit a Proposal</a>
+                <a href="{{ url_for('comming_soon')}}" class="btn btn-primary">Submit a Proposal</a>
             </div>
         </div>
     </div>
@@ -284,7 +289,7 @@
                 </div>
             </div>
         </div>
-
-
 </section>
+
+
 {% endblock %}

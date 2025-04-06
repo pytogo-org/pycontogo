@@ -7,17 +7,28 @@ const program = document.getElementById("program");
 const mainNav = document.getElementById("mainNav");
 const  mobileMenuBtn = document.getElementById("mobileMenuBtn");
 const countdownDate = new Date("2025-09-23T00:00:00Z").getTime();
+let now = new Date().getTime();
+let distance = countdownDate - now;
 
+days.innerHTML = convertToTwoDigits(Math.floor(distance / (1000 * 60 * 60 * 24)));
+hours.innerHTML = convertToTwoDigits(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+minutes.innerHTML = convertToTwoDigits(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+seconds.innerHTML = convertToTwoDigits(Math.floor((distance % (1000 * 60)) / 1000));
+
+function convertToTwoDigits(num) {
+    return num < 10 ? "0" + num : num;
+}
 
 function fn_countdown(){
-    const now = new Date().getTime();
-    const distance = countdownDate - now;
+    now = new Date().getTime();
+    distance = countdownDate - now;
 
+    const daysLeft = convertToTwoDigits(Math.floor(distance / (1000 * 60 * 60 * 24)));
+    const hoursLeft = convertToTwoDigits(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    const minutesLeft = convertToTwoDigits(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+    const secondsLeft = convertToTwoDigits(Math.floor((distance % (1000 * 60)) / 1000));
 
-    const daysLeft = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hoursLeft = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutesLeft = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const secondsLeft = Math.floor((distance % (1000 * 60)) / 1000);
+   
 
     days.innerHTML = daysLeft;
     hours.innerHTML = hoursLeft;
@@ -44,7 +55,6 @@ mobileMenuBtn.addEventListener("click", function() {
 }
 );
 
-// restore the default display of the mainNav
 window.addEventListener("resize", function() {
     if (window.innerWidth > 768) {
         mainNav.style.display = "flex";

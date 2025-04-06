@@ -1,0 +1,104 @@
+.error-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.error-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.error-digit {
+    font-size: 120px;
+    font-weight: bold;
+    color: var(--dark-blue);
+    line-height: 1;
+}
+
+.error-logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 5px;
+}
+
+.error-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--dark-blue);
+}
+
+.error-message {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: var(--gray);
+}
+
+.action-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    .error-title {
+        font-size: 2rem;
+    }
+
+    .error-digit {
+        font-size: 80px;
+    }
+
+    .error-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+ 
+
+    .error-digit {
+        font-size: 60px;
+    }
+
+    .error-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .error-title {
+        font-size: 1.8rem;
+    }
+
+    .error-message {
+        font-size: 1rem;
+    }
+}

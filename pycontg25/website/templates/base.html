@@ -21,24 +21,29 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#000000">
     <meta name="msapplication-TileColor" content="#000000">
-    <meta name="msapplication-TileImage" content="{{ url_for('static', path='images/favicon.png') }}">
+    <meta name="msapplication-TileImage" content="{{ url_for('static', path='images/favicon.ico') }}">
     <meta name="msapplication-navbutton-color" content="#000000">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Python Togo">
     <meta name="application-name" content="Python Togo">
     <meta name="msapplication-TileColor" content="#000000">
-    <meta name="msapplication-TileImage" content="{{ url_for('static', path='images/favicon.png') }}">
+    <meta name="msapplication-TileImage" content="{{ url_for('static', path='images/favicon.ico') }}">
     <meta name="msapplication-navbutton-color" content="#000000">
     <meta name="theme-color" content="#000000">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href=" {{ url_for('static', path='images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href=" {{ url_for('static', path='images/favicon.ico') }}" type="image/x-icon">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PyCon Togo 2025 - First Python Conference in Togo</title>
     <link rel="stylesheet" href="../static/css/style.css"> 
     <link rel="stylesheet" href="../static/css/menu.css">
+    <script src="../static/js/main.js" defer></script>
+    
+    {% block style %}{% endblock %}
+
+
 
 </head>
 
@@ -46,12 +51,14 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <!-- <a href="{{ url_for('home')}}"> -->
+                <a href="{{ url_for('home')}}">
                 <img src="../static/images/logo.png" alt="PyCon Togo Logo">
+                </a>
                 <div class="logo-text">
-                    <span class="logo-title">PyCon Togo ' 25</span>
+                    <a href="{{ url_for('home')}}"><span class="logo-title">PyCon Togo ' 25</span></a>
+                    
                 </div>
-                <!-- </a> -->
+               
             </div>
 
             <div class="nav-container">
@@ -147,7 +154,7 @@
                                 <path
                                     d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
                             </svg>
-                            <span>info@pycontogo.org</span>
+                            <span>pydevstogo@gmail.com</span>
                         </li>
                         <li style="display: flex; align-items: flex-start;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#b3b3b3"
@@ -177,6 +184,4 @@
         </div>
     </footer>
 </body>
-<script src="../static/js/home.js"></script>
-
 </html>

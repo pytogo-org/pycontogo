@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block style %}
+<script src="../static/js/main.js" defer></script>
+<script src="../static/js/home.js" defer></script>
+<link rel="stylesheet" href="../static/css/coming-soon.css">
+
+{% endblock %}
+
+{% block content %}
+
+<main class="coming-soon">
+    <h2>This page is under development</h2>
+    <p>We are currently working on this feature to provide you with the best possible experience at
+        of PyCon Togo 2025.</p>
+
+    <div class="countdown-container">
+        <h2 class="countdown-title">Event Countdown</h2>
+        <div class="countdown-timer" id="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">215</span>
+                <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">08</span>
+                <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">45</span>
+                <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">30</span>
+                <span class="countdown-label">Seconds</span>
+            </div>
+        </div>
+
+        <div class="notification">
+            This page will be available soon. Come back in a few days!
+        </div>
+
+    <div class="cta-buttons">
+        <a href="{{ url_for('home')}}" class="btn">Back to home page</a>
+        <a href="mailto:pycontogo@gmail.com" class="secondary-btn">Contact us</a>
+    </div>
+</main>
+<section class="page-content" id="program"></section>
+
+
+{% endblock %}
