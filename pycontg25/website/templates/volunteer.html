@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% block style %}
+<script src="../static/js/volunteer.js" defer></script>
+<link rel="stylesheet" href="../static/css/volunteer.css">
+
+
+{% endblock %}
+{% block content %}
+
+<section class="container">
+    <div class="page-title">
+        <h1 class="h-volunteer">Join the PyCon Togo 2025 Team</h1>
+        <p>Be part of the team that makes PyCon Togo possible! We're looking for enthusiastic volunteers to help
+            with organization, logistics, and much more.</p>
+    </div>
+
+    <div class="form-container">
+        <form id="volunteer-form">
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="v-firstname" class="required-field">First Name</label>
+                        <input type="text" id="v-firstname" name="firstname" required>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="v-lastname" class="required-field">Last Name</label>
+                        <input type="text" id="v-lastname" name="lastname" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="v-email" class="required-field">Email</label>
+                        <input type="email" id="v-email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="v-phone" class="required-field">Phone</label>
+                        <input type="tel" id="v-phone" name="phone" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="v-city">City</label>
+                <input type="text" id="v-city" name="city">
+            </div>
+
+            <div class="form-group">
+                <label for="v-experience">Experience with Python</label>
+                <select id="v-experience" name="experience">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                    <option value="none">No experience (but interested)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="required-field">Availability</label>
+                <p style="margin-bottom: 10px; font-size: 0.9rem;">PyCon Togo will take place on September 23, 2025.
+                    When would you be available to help?</p>
+
+                <div class="checkbox-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="v-before" name="availability" value="before">
+                        <label for="v-before">Before the event (preparation)</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="v-during" name="availability" value="during">
+                        <label for="v-during">During the event</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="v-after" name="availability" value="after">
+                        <label for="v-after">After the event (teardown, etc.)</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="required-field">Areas of Interest</label>
+                <p style="margin-bottom: 10px; font-size: 0.9rem;">Select the areas where you'd like to contribute
+                </p>
+
+                <div class="checkbox-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="v-registration" name="interests" value="registration">
+                        <label for="v-registration">Welcome and Registration</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="v-technical" name="interests" value="technical">
+                        <label for="v-technical">Technical Support</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="v-logistic" name="interests" value="logistic">
+                        <label for="v-logistic">Logistics</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="v-social" name="interests" value="social">
+                        <label for="v-social">Social Media and Communication</label>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="v-photography" name="interests" value="photography">
+                        <label for="v-photography">Photography and Documentation</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="v-message">Message (motivation, previous experience...)</label>
+                <textarea id="v-message" name="message"></textarea>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn">Register as a Volunteer</button>
+            </div>
+        </form>
+
+        <div id="volunteer-success" class="success-message">
+            <h3 class="h-volunteer">Thank you for your registration!</h3>
+            <p>We have received your request to volunteer at PyCon Togo 2025. Our team will contact you soon.</p>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h3 class="h-volunteer">Why Become a Volunteer?</h3>
+        <ul class="benefit-list">
+            <li>Gain valuable experience in event organization</li>
+            <li>Network with Python experts and enthusiasts</li>
+            <li>Free access to the conference</li>
+            <li>Exclusive volunteer pack (t-shirt, goodies)</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

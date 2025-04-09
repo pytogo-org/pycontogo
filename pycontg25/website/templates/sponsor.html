@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+{% block style %}
+<script src="../static/js/sponsor.js" defer></script>
+<link rel="stylesheet" href="../static/css/sponsor.css">
+
+
+{% endblock %}
+{% block content %}
+<section class="container">
+    <div class="page-title">
+        <h1 class="h-sponsor">Sponsor PyCon Togo 2025</h1>
+        <p>Support our inaugural Python conference and help build the tech community in Togo</p>
+    </div>
+
+    <div class="free-event-box">
+        <h3 class="h-sponsor">First Edition - Free for All Attendees!</h3>
+        <p>PyCon Togo 2025 will be our first edition and completely free for all participants. Your sponsorship directly
+            helps us create an accessible event that builds Togo's tech community from the ground up.</p>
+    </div>
+
+    <div class="info-section">
+        <h2 class="h-sponsor">Why Sponsor PyCon Togo?</h2>
+        <p>PyCon Togo is the first Python conference in Togo, aiming to bring together developers, students, and tech
+            enthusiasts from across the region. As a new community, we need your support to make this event successful
+            and establish a foundation for future growth.</p>
+
+        <div class="info-box">
+            <h3 class="h-sponsor">Benefits for Sponsors</h3>
+            <ul class="benefit-list">
+                <li>Be recognized as an early supporter of Togo's Python community</li>
+                <li>Connect with tech talent in an emerging market</li>
+                <li>Demonstrate your commitment to tech education in West Africa</li>
+                <li>Gain visibility for your brand among developers and students</li>
+                <li>Help shape the future of the tech ecosystem in Togo</li>
+                <li>Network with other forward-thinking companies and organizations</li>
+            </ul>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Expected Attendees</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Technical Sessions</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">West African Countries</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">60%</div>
+                <div class="stat-label">Students & Young Developers</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h2 class="h-sponsor" id="sponsorship-packages">Affordable Sponsorship Packages</h2>
+        <p>As a new community initiative, we've created sponsorship packages that are accessible while still offering
+            valuable benefits.</p>
+
+        <div class="sponsor-grid">
+            <!-- Headline Sponsor - New premium option -->
+            <div class="sponsor-card headline-card">
+                <div class="sponsor-header headline-header">
+                    <h3 class="h-sponsor">Headline Sponsor</h3>
+                    <p>1,000,000 FCFA</p>
+                    <p><small>(~$1,650 USD)</small></p>
+                    <div class="availability-tag">EXCLUSIVE - 1 of 1 Available</div>
+                </div>
+                <div class="sponsor-body">
+                    <ul class="sponsor-benefits">
+                        <li>Event naming rights: "PyCon Togo 2025 powered by [Your Company]"</li>
+                        <li>Prominent logo placement on all conference materials and website</li>
+                        <li>Dedicated social media campaign highlighting your support</li>
+                        <li>Premium exhibit space at the venue entrance</li>
+                        <li>Opening keynote opportunity (10 minutes)</li>
+                        <li>Four banners placed strategically throughout the venue</li>
+                        <li>Opportunity to distribute branded items to all attendees</li>
+                        <li>First access to recruitment opportunities with participants</li>
+                    </ul>
+                </div>
+                <div class="sponsor-footer">
+                    <a href="#contact-form" class="btn headline-btn">Become the Headline Sponsor</a>
+                </div>
+            </div>
+
+            <div class="sponsor-card">
+                <div class="sponsor-header bronze-header">
+                    <h3 class="h-sponsor">Community Supporter</h3>
+                    <p>50,000 FCFA</p>
+                    <p><small>(~$80 USD)</small></p>
+                    <div class="availability-tag">Unlimited Available</div>
+                </div>
+                <div class="sponsor-body">
+                    <ul class="sponsor-benefits">
+                       <li>Logo on website</li>
+                        <li>Mention during opening ceremony</li>
+                        <li>Social media recognition</li>
+                        <li class="inactive">Exhibit space</li>
+                        <li class="inactive">Banner placement</li>
+                        <li class="inactive">Speaking opportunity</li>
+                    </ul>
+                </div>
+                <div class="sponsor-footer">
+                    <a href="#contact-form" class="btn">Become a Supporter</a>
+                </div>
+            </div>
+
+            <div class="sponsor-card">
+                <div class="sponsor-header silver-header">
+                    <h3 class="h-sponsor">Bronze Sponsor</h3>
+                    <p>150,000 FCFA</p>
+                    <p><small>(~$250 USD)</small></p>
+                    <div class="availability-tag">10 of 10 Available</div>
+                </div>
+                <div class="sponsor-body">
+                    <ul class="sponsor-benefits">
+                        <li>Logo on website and printed materials</li>
+                        <li>Mention during opening ceremony</li>
+                        <li>Social media recognition</li>
+                        <li>Distribution of company materials</li>
+                        <li class="inactive">Banner placement</li>
+                        <li class="inactive">Speaking opportunity</li>
+                    </ul>
+                </div>
+                <div class="sponsor-footer">
+                    <a href="#contact-form" class="btn">Become a Bronze Sponsor</a>
+                </div>
+            </div>
+
+            <div class="sponsor-card">
+                <div class="sponsor-header gold-header">
+                    <h3 class="h-sponsor">Silver Sponsor</h3>
+                    <p>300,000 FCFA</p>
+                    <p><small>(~$500 USD)</small></p>
+                    <div class="availability-tag">5 of 5 Available</div>
+                </div>
+                <div class="sponsor-body">
+                    <ul class="sponsor-benefits">
+                        <li>Logo on website and printed materials</li>
+                        <li>Mention during opening ceremony</li>
+                        <li>Enhanced social media recognition</li>
+                        <li>Distribution of company materials</li>
+                        <li>Banner placement at venue</li>
+                        <li>Brief company introduction (2 min)</li>
+                    </ul>
+                </div>
+                <div class="sponsor-footer">
+                    <a href="#contact-form" class="btn">Become a Silver Sponsor</a>
+                </div>
+            </div>
+
+            <div class="sponsor-card">
+                <div class="sponsor-header platinum-header">
+                    <h3 class="h-sponsor">Gold Sponsor</h3>
+                    <p>600,000 FCFA</p>
+                    <p><small>(~$1,000 USD)</small></p>
+                    <div class="availability-tag">3 of 3 Available</div>
+                </div>
+                <div class="sponsor-body">
+                    <ul class="sponsor-benefits">
+                        <li>Premium logo placement on all materials</li>
+                        <li>Special recognition during ceremonies</li>
+                        <li>Comprehensive social media campaign</li>
+                        <li>Small exhibit space</li>
+                        <li>Multiple banner placements</li>
+                        <li>5-minute speaking opportunity</li>
+                    </ul>
+                </div>
+                <div class="sponsor-footer">
+                    <a href="#contact-form" class="btn">Become a Gold Sponsor</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <h2 class="h-sponsor">In-Kind Sponsorship Welcome!</h2>
+        <p>We also welcome in-kind contributions such as venue space, equipment loans, refreshments, or printing
+            services. Every contribution helps make our first event successful!</p>
+        <a href="#contact-form" class="btn">Contact Us</a>
+    </div>
+
+    <div class="form-container" id="contact-form">
+        <h2 class="h-sponsor">Become a Sponsor</h2>
+        <p>Fill out the form below to express your interest in sponsoring PyCon Togo 2025. Our team will contact you
+            with more details.</p>
+
+        <form id="sponsor-form">
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="company-name" class="required-field">Company/Organization Name</label>
+                        <input type="text" id="company-name" name="company" required>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="url" id="website" name="website">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="contact-name" class="required-field">Contact Person</label>
+                        <input type="text" id="contact-name" name="contact" required>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="contact-title">Job Title</label>
+                        <input type="text" id="contact-title" name="title">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="contact-email" class="required-field">Email</label>
+                        <input type="email" id="contact-email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="contact-phone" class="required-field">Phone</label>
+                        <input type="tel" id="contact-phone" name="phone" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="sponsorship-level" class="required-field">Sponsorship Level of Interest</label>
+                <select id="sponsorship-level" name="level" required>
+                    <option value="">Select a sponsorship level</option>
+                    <option value="headline">Headline Sponsor (1,000,000 FCFA) - 1 Available</option>
+                    <option value="gold">Gold Sponsor (600,000 FCFA) - 3 Available</option>
+                    <option value="silver">Silver Sponsor (300,000 FCFA) - 5 Available</option>
+                    <option value="bronze">Bronze Sponsor (150,000 FCFA) - 10 Available</option>
+                    <option value="community">Community Supporter (50,000 FCFA) - Unlimited</option>
+                    <option value="special">Special Sponsorship Opportunity</option>
+                    <option value="inkind">In-Kind Sponsorship</option>
+                    <option value="custom">Custom Sponsorship</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="special-option" style="display: none;">
+                <label for="special-sponsorship">Special Sponsorship Option</label>
+                <select id="special-sponsorship" name="special">
+                    <option value="">Select a special sponsorship option</option>
+                    <option value="refreshments">Refreshments Sponsor (100,000 FCFA) - 2 Available</option>
+                    <option value="speaker">Speaker Support (200,000 FCFA) - 2 Available</option>
+                    <option value="student">Student Sponsor (150,000 FCFA) - 3 Available</option>
+                    <option value="workshop">Tech Workshop (150,000 FCFA) - 4 Available</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="inkind-option" style="display: none;">
+                <label for="inkind-details" class="required-field">In-Kind Sponsorship Details</label>
+                <textarea id="inkind-details" name="inkind-details"
+                    placeholder="Please describe what goods or services you would like to contribute (venue, equipment, refreshments, etc.)"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Additional Information</label>
+                <textarea id="message" name="message"
+                    placeholder="Please share any specific requests, questions, or additional information about your sponsorship interest."></textarea>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn">Submit Sponsorship Inquiry</button>
+            </div>
+        </form>
+
+        <div id="sponsor-success" class="success-message">
+            <h3 class="h-sponsor">Thank you for your interest in sponsoring PyCon Togo 2025!</h3>
+            <p>We've received your inquiry and our team will contact you soon to discuss the details.</p>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

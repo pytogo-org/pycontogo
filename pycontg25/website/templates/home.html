@@ -18,8 +18,8 @@
                 celebration of Python and its community.</p>
 
             <div class="hero-buttons">
-                <a href="{{ url_for('comming_soon')}}" class="btn btn-primary">Become a Speaker</a>
-                <a href="{{ url_for('comming_soon')}}" class="btn btn-outline">Join as Volunteer</a>
+                <a href="{{ url_for('proposal')}}" class="btn btn-primary">Become a Speaker</a>
+                <a href="{{ url_for('volunteer')}}" class="btn btn-outline">Join as Volunteer</a>
             </div>
         </div>
 
@@ -70,7 +70,6 @@
         </div>
 </section>
 
-<!-- Sponsorship Section -->
 <section class="sponsorship" id="sponsors">
     <div class="container">
         <h2 class="section-title">Become a Sponsor</h2>
@@ -82,45 +81,63 @@
 
         <div class="tiers-container">
             <h3 class="tier-title">Sponsorship Tiers</h3>
+
             <div class="tiers">
                 <div class="tier">
-                    <h4 class="tier-name">Silver</h4>
-                    <div class="tier-price">$160</div>
+
+                    <h4 class="tier-name">Community Supporter</h4>
+                    <div class="tier-price">50,000 FCFA (~$80)</div>
                     <ul class="tier-features">
                         <li>Logo on website</li>
-                        <li>1 conference pass</li>
-                        <li>Swag in welcome pack</li>
+                        <li>Mention during opening ceremony</li>
+                        <li>Social media recognition</li>
+                    </ul>
+                </div>
+                <div class="tier">
+                    <h4 class="tier-name">Bronze</h4>
+                    <div class="tier-price">150,000 FCFA (~$250)</div>
+                    <ul class="tier-features">
+                        <li>Logo on website and printed materials</li>
+                        <li>Mention during opening ceremony</li>
+                        <li>Social media recognition</li>
+                        <li>Distribution of company materials</li>
                     </ul>
                 </div>
 
                 <div class="tier popular">
-                    <span class="popular-tag">POPULAR</span>
-                    <h4 class="tier-name">Gold</h4>
-                    <div class="tier-price">$700 </div>
+                    <!-- <span class="popular-tag">POPULAR</span> -->
+                    <h4 class="tier-name">Silver</h4>
+                    <div class="tier-price">300,000 FCFA (~$500) </div>
                     <ul class="tier-features">
-                        <li>Logo on website and banners</li>
-                        <li>3 conference passes</li>
-                        <li>Swag in welcome pack</li>
-                        <li>5 min presentation slot</li>
+                        <li>Logo on website and printed materials</li>
+                        <li>Mention during opening ceremony</li>
+                        <li>Enhanced social media recognition</li>
+                        <li>Distribution of company materials</li>
+                        <li>Banner placement at venue</li>
+                        <li>Brief company introduction (2 min)</li>
                     </ul>
                 </div>
 
                 <div class="tier">
-                    <h4 class="tier-name">Platinum</h4>
-                    <div class="tier-price">$1500</div>
+                    <h4 class="tier-name">Gold</h4>
+                    <div class="tier-price">600,000 FCFA (~$1,000)</div>
                     <ul class="tier-features">
-                        <li>Logo on website, banners, and swag</li>
-                        <li>5 conference passes</li>
-                        <li>Swag in welcome pack</li>
-                        <li>10 min presentation slot</li>
-                        <li>Dedicated booth space</li>
+                        <li>Premium logo placement on all materials</li>
+                        <li>Special recognition during ceremonies</li>
+                        <li>Comprehensive social media campaign</li>
+                        <li>Small exhibit space</li>
+                        <li>Multiple banner placements</li>
+                        <li>5-minute speaking opportunity</li>
                     </ul>
                 </div>
             </div>
+
         </div>
-        <div class="sponsor-btn-container">
-            <a href="{{ url_for('comming_soon')}}" class="btn btn-primary">Become a Sponsor</a>
+        <div class="hero-buttons">
+            <a href="{{ url_for('sponsor')}}" class="btn btn-primary">Become a Sponsor</a>
+            <a href="../static/images/logo.png" class="btn btn-outline" download>Download our Prospectus</a>
         </div>
+
     </div>
 </section>
 <!-- Call to Action Section -->
@@ -157,7 +174,7 @@
                 </li>
             </ul>
             <div class="cta-btn">
-                <a href="{{ url_for('comming_soon')}}" class="btn btn-secondary">Register as Volunteer</a>
+                <a href="{{ url_for('volunteer')}}" class="btn btn-secondary">Register as Volunteer</a>
             </div>
         </div>
 
@@ -182,7 +199,7 @@
             </div>
 
             <div class="cta-btn">
-                <a href="{{ url_for('comming_soon')}}" class="btn btn-primary">Submit a Proposal</a>
+                <a href="{{ url_for('proposal')}}" class="btn btn-primary">Submit a Proposal</a>
             </div>
         </div>
     </div>

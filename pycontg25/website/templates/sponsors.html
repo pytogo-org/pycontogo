@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block style %}
+<script src="../static/js/sponsors.js" defer></script>
+<link rel="stylesheet" href="../static/css/sponsors.css">
+
+
+{% endblock %}
+{% block content %}
+
+<section class="container">
+    <h1>Our Sponsors</h1>
+
+    <div class="sponsors-intro">
+        <p>PyCon Togo 2025 wouldn't be possible without the generous support of our sponsors. These companies and
+            organizations are helping us build the Python community in Togo and West Africa.</p>
+    </div>
+
+    <div class="category">
+        <h2 class="sponsor-tier-title">Headline Sponsor</h2>
+
+        <div class="sponsor-logo-container">
+            <!-- <div class="sponsor-card">
+                <img src="../static/images/parteners/psf-logo.png" alt="Your Company Logo" class="sponsor-logo">
+            </div> -->
+            <a href="{{ url_for('sponsor')}}#sponsorship-packages" class="sponsor-btn">Become Sponsor</a>
+
+
+            <!-- When you have a headline sponsor, use this: -->
+            <!--
+                <div class="sponsor-card headline-sponsor">
+                    <img src="/api/placeholder/300/150" alt="Your Company Logo" class="sponsor-logo">
+                </div>
+                -->
+        </div>
+    </div>
+
+    <!-- Gold Sponsors -->
+    <div class="category">
+        <h2 class="sponsor-tier-title">Gold Sponsors</h2>
+
+
+        <div class="sponsor-logo-container">
+            <!-- Add empty slots if needed -->
+            <!-- <div class="sponsor-card">
+                <img src="../static/images/parteners/amz_girls.png" alt="Your Company Logo" class="sponsor-logo">
+            </div> -->
+            <a href="{{ url_for('sponsor')}}#sponsorship-packages" class="sponsor-btn">Become Sponsor</a>
+
+        </div>
+
+
+    </div>
+    </div>
+
+    <!-- Silver Sponsors -->
+    <div class="category">
+        <h2 class="sponsor-tier-title">Silver Sponsors</h2>
+
+        <div class="sponsor-logo-container">
+            
+            <a href="{{ url_for('sponsor')}}#sponsorship-packages" class="sponsor-btn">Become Sponsor</a>
+        </div>
+    </div>
+
+    <!-- Bronze Sponsors -->
+    <div class="category">
+        <h2 class="sponsor-tier-title">Bronze Sponsors</h2>
+
+        <div class="sponsor-logo-container">
+
+            <a href="{{ url_for('sponsor')}}#sponsorship-packages" class="sponsor-btn">Become Sponsor</a>
+
+
+        </div>
+    </div>
+
+    <!-- Community Supporters -->
+    <div class="category">
+        <h2 class="sponsor-tier-title">Community Supporters</h2>
+
+        <div class="sponsor-logo-container">
+
+            <a href="{{ url_for('sponsor')}}#sponsorship-packages" class="sponsor-btn">Become Sponsor</a>
+
+
+        </div>
+    </div>
+
+    <!-- Call to action -->
+    <div class="sponsors-cta" id="become-sponsor">
+        <h2>Join Our Sponsors</h2>
+        <p>PyCon Togo 2025 is seeking sponsors to help make this event a success. By sponsoring, you'll support the
+            growth of the Python community in Togo while gaining visibility for your brand.</p>
+        <a href="{{ url_for('sponsor')}}#sponsorship-packages" class="btn btn-large">Become a Sponsor</a>
+    </div>
+
+</section>
+{% endblock %}

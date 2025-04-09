@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block style %}
+<script src="../static/js/speacker.js" defer></script>
+<link rel="stylesheet" href="../static/css/speacker.css">
+
+
+{% endblock %}
+{% block content %}
+<section class="container">
+    <div class="page-title">
+        <h1 class="h-speacker">Propose a Talk for PyCon Togo 2025</h1>
+        <p>Share your knowledge and experience with the Python community. We welcome proposals on all Python-related
+            topics, from beginner to advanced levels.</p>
+    </div>
+
+    <div class="funding-notice">
+        <strong>Important Notice:</strong> Currently, we don't have sufficient funds for speaker travel or
+        accommodation assistance. We're actively seeking sponsors to potentially provide this support in the future.
+        Local speakers or those who can fund their own travel are especially encouraged to apply.
+    </div>
+
+    <div class="form-container">
+        <h3 class="h-speacker">Presentation Formats</h3>
+        <div class="talk-format">
+            <div class="format-card" onclick="selectFormat(this, 'lightning')">
+                <h3 class="h-speacker">Lightning Talk</h3>
+                <p>10 minutes</p>
+                <p>Short and dynamic presentation on a specific topic</p>
+            </div>
+            <div class="format-card" onclick="selectFormat(this, 'standard')">
+                <h3 class="h-speacker">Standard Talk</h3>
+                <p>30 minutes</p>
+                <p>In-depth presentation with Q&A</p>
+            </div>
+            <div class="format-card" onclick="selectFormat(this, 'deep-dive')">
+                <h3 class="h-speacker">Deep Dive</h3>
+                <p>45 minutes</p>
+                <p>Detailed session on a complex topic</p>
+            </div>
+        </div>
+
+        <form id="speaker-form">
+            <input type="hidden" id="talk-format" name="format" value="">
+
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="s-firstname" class="required-field">First Name</label>
+                        <input type="text" id="s-firstname" name="firstname" required>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="s-lastname" class="required-field">Last Name</label>
+                        <input type="text" id="s-lastname" name="lastname" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="s-email" class="required-field">Email</label>
+                        <input type="email" id="s-email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-col">
+                    <div class="form-group">
+                        <label for="s-phone">Phone</label>
+                        <input type="tel" id="s-phone" name="phone">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="s-title" class="required-field">Talk Title</label>
+                <input type="text" id="s-title" name="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="s-level" class="required-field">Talk Level</label>
+                <select id="s-level" name="level" required>
+                    <option value="">Select a level</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="s-abstract" class="required-field">Talk Abstract</label>
+                <textarea id="s-abstract" name="abstract" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="s-outline">Talk Outline</label>
+                <textarea id="s-outline" name="outline" placeholder="Detail the main points you'll cover"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="s-bio" class="required-field">Speaker Biography</label>
+                <textarea id="s-bio" name="bio" required
+                    placeholder="Briefly tell us about yourself and your experience (will be visible on the website)"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Special Requirements</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="s-technical" name="needs" value="technical">
+                        <label for="s-technical">Specific technical requirements</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="technical-details" class="form-group" style="display: none;">
+                <label for="s-technical-details">Specify your technical requirements</label>
+                <textarea id="s-technical-details" name="technical-details"></textarea>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn">Submit My Proposal</button>
+            </div>
+        </form>
+
+        <div id="speaker-success" class="success-message">
+            <h3 class="h-speacker">Thank you for your proposal!</h3>
+            <p>We have received your talk proposal for PyCon Togo 2025. Our team will review it and contact you
+                soon.</p>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h3 class="h-speacker">Benefits for Speakers</h3>
+        <ul class="benefit-list">
+            <li>Free entry to the conference</li>
+            <li>Visibility within the African Python community</li>
+            <li>Special speaker badge and exclusive swag</li>
+        </ul>
+        <p><strong>Submission deadline:</strong> August 1, 2025</p>
+    </div>
+</section>
+{% endblock %}

@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 
 
@@ -20,7 +20,18 @@ year = datetime.now().year
 
 evnet_date = datetime(2025, 9, 23, 7, 30, 0)
 event_date_str = evnet_date.strftime("%d %B %Y at %H:%M")
-print(f"Event date: {event_date_str}")
+
+
+# @app.get("/favicon.ico", include_in_schema=False)
+# async def favicon():
+#     return StaticFiles(directory=static_folder).get_response(
+#         path="favicon.ico", scope=None
+#     )
+# @app.get("/robots.txt", include_in_schema=False)
+# async def robots_txt():
+#     return StaticFiles(directory=static_folder).get_response(
+#         path="robots.txt", scope=None
+#     )
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
     return templates.TemplateResponse(
@@ -44,27 +55,74 @@ def shop_swag(request: Request):
 
 @app.get("/register", response_class=HTMLResponse)
 def register(request: Request):
+    # check if the event is in exactly 1 month
+    regigstration_date = datetime(2025, 8, 23, 7, 30, 0)
+    te = evnet_date - regigstration_date
+    print(te)
+    if evnet_date - regigstration_date <= timedelta(days=30):
+        return templates.TemplateResponse(
+            request=request,
+            name="register.html",
+            context={
+                "year": year,
+                "event_date": event_date_str,
+                "registration_open": True,
+            },
+        )
     return templates.TemplateResponse(
         request=request,
-        name="register.html",
+        name="coming-soon.html",
+        context={
+            "year": year,
+            "event_date": event_date_str,
+            "registration_open": False,
+        },
+    )
+
+  
+
+
+@app.get("/coming-soon", response_class=HTMLResponse)
+def coming_soon(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="coming-soon.html",
         context={"year": year},
     )
 
 
-@app.get("/comming-soon", response_class=HTMLResponse)
-def comming_soon(request: Request):
+@app.get("/volunteer", response_class=HTMLResponse)
+def volunteer(request: Request):
     return templates.TemplateResponse(
         request=request,
-        name="comming-soon.html",
+        name="volunteer.html",
         context={"year": year},
     )
 
 
-@app.get("/404", response_class=HTMLResponse)
-def not_found(request: Request):
+@app.get("/proposal", response_class=HTMLResponse)
+def proposal(request: Request):
     return templates.TemplateResponse(
         request=request,
-        name="404.html",
+        name="speaker.html",
+        context={"year": year},
+    )
+
+
+@app.get("/sponsor", response_class=HTMLResponse)
+def sponsor(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="sponsor.html",
+        context={"year": year},
+    )
+
+
+@app.get("/sponsors", response_class=HTMLResponse)
+def sponsors(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="sponsors.html",
         context={"year": year},
     )
 
