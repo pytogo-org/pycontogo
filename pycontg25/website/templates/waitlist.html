@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block style %}
+<script src="../static/js/sponsor.js" defer></script>
+<link rel="stylesheet" href="../static/css/waitlist.css">
+
+
+{% endblock %}
+{% block content %}
+<section class="">
+    <h3>Join the waitlist </h3>
+    <form action="/waitlist" method="post">
+        <input type="text" name="email"placeholder="Enter your email" required>
+        <button type="submit">Join</button>
+    </form>
+</section>
+
+{% endblock %}

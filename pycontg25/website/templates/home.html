@@ -83,54 +83,20 @@
             <h3 class="tier-title">Sponsorship Tiers</h3>
 
             <div class="tiers">
+                {% for sponsor_tier in sponsor_tiers %}
+                {% if sponsor_tier['title'] != "headline" and sponsor_tier['title'] != "inkind" %}
                 <div class="tier">
+                    <h4 class="tier-name">{{ sponsor_tier['name'] }}</h4>
+                    <div class="tier-price">{{ sponsor_tier['amount_cfa'] }} FCFA (~${{ sponsor_tier['amount_usd'] }})</div>
+                    <ul class="tier-features">
+                        {% for advantage in sponsor_tier['advantages'] %}
+                        <li>{{ advantage }}</li>
+                        {% endfor %}
 
-                    <h4 class="tier-name">Community Supporter</h4>
-                    <div class="tier-price">50,000 FCFA (~$80)</div>
-                    <ul class="tier-features">
-                        <li>Logo on website</li>
-                        <li>Mention during opening ceremony</li>
-                        <li>Social media recognition</li>
                     </ul>
                 </div>
-                <div class="tier">
-                    <h4 class="tier-name">Bronze</h4>
-                    <div class="tier-price">150,000 FCFA (~$250)</div>
-                    <ul class="tier-features">
-                        <li>Logo on website and printed materials</li>
-                        <li>Mention during opening ceremony</li>
-                        <li>Social media recognition</li>
-                        <li>Distribution of company materials</li>
-                    </ul>
-                </div>
-
-                <div class="tier popular">
-                    <!-- <span class="popular-tag">POPULAR</span> -->
-                    <h4 class="tier-name">Silver</h4>
-                    <div class="tier-price">300,000 FCFA (~$500) </div>
-                    <ul class="tier-features">
-                        <li>Logo on website and printed materials</li>
-                        <li>Mention during opening ceremony</li>
-                        <li>Enhanced social media recognition</li>
-                        <li>Distribution of company materials</li>
-                        <li>Banner placement at venue</li>
-                        <li>Brief company introduction (2 min)</li>
-                    </ul>
-                </div>
-
-                <div class="tier">
-                    <h4 class="tier-name">Gold</h4>
-                    <div class="tier-price">600,000 FCFA (~$1,000)</div>
-                    <ul class="tier-features">
-                        <li>Premium logo placement on all materials</li>
-                        <li>Special recognition during ceremonies</li>
-                        <li>Comprehensive social media campaign</li>
-                        <li>Small exhibit space</li>
-                        <li>Multiple banner placements</li>
-                        <li>5-minute speaking opportunity</li>
-                    </ul>
-                </div>
-            </div>
+                {% endif %}
+                {% endfor %}
 
         </div>
         <div class="hero-buttons">
@@ -195,7 +161,7 @@
 
             <div class="cta-info">
                 <h4 class="cta-info-title">Speaker Benefits</h4>
-                <p>Free conference pass, speaker dinner, travel assistance available</p>
+                <p>Free conference pass, speaker dinner, network</p>
             </div>
 
             <div class="cta-btn">

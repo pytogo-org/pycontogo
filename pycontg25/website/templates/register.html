@@ -12,7 +12,7 @@
 
 <section class="page-content">
     <div class="container">
-        <form class="registration-form">
+        <form class="registration-form" action="/register" method="POST">
             <div class="form-group">
                 <label for="fullName" class="form-label">Full Name *</label>
                 <input type="text" id="fullName" name="fullName" class="form-control" required>
@@ -24,7 +24,7 @@
             </div>
 
             <div class="form-group">
-                <label for="phone" class="form-label">Phone Number</label>
+                <label for="phone" class="form-label">Phone Number (WhatsApp)</label>
                 <input type="tel" id="phone" name="phone" class="form-control">
             </div>
 
@@ -44,63 +44,27 @@
                     <option value="other">Other</option>
                 </select>
             </div>
-
-            <!-- <div class="form-group">
-                <label for="ticketType" class="form-label">Ticket Type *</label>
-                <select id="ticketType" name="ticketType" class="form-control" required>
-                    <option value="">Select ticket type</option>
-                    <option value="regular">Regular Ticket ($50)</option>
-                    <option value="student">Student Ticket ($25)</option>
-                    <option value="corporate">Corporate Ticket ($100)</option>
-                    <option value="sponsor">Sponsor Ticket ($200)</option>
+            <div class="form-group">
+                <label for="country" class="form-label">T-Shirt Size *</label>
+                <select id="country" name="tshirtsize" class="form-control" required>
+                    <option value="">Select your Size</option>
+                    <option value="s">Small</option>
+                    <option value="m">Medium</option>
+                    <option value="l">Large</option>
+                    <option value="xl">X-Large</option>
+                    <option value="xxl">XX-Large</option>
                 </select>
-            </div> -->
-
-            <div class="form-group">
-                <label class="form-label">Workshops (Optional)</label>
-                <div class="form-check">
-                    <input type="checkbox" id="workshop1" name="workshops" value="django" class="form-check-input">
-                    <label for="workshop1">Django Web Development Masterclass ($20)</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" id="workshop2" name="workshops" value="data" class="form-check-input">
-                    <label for="workshop2">Data Analysis with Python ($20)</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" id="workshop3" name="workshops" value="ai" class="form-check-input">
-                    <label for="workshop3">AI and Machine Learning Basics ($25)</label>
-                </div>
             </div>
-
-            <div class="form-group">
-                <label class="form-label">T-Shirt Size</label>
-                <div class="form-check">
-                    <input type="radio" id="sizeS" name="tshirtSize" value="S" class="form-check-input">
-                    <label for="sizeS">Small</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" id="sizeM" name="tshirtSize" value="M" class="form-check-input">
-                    <label for="sizeM">Medium</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" id="sizeL" name="tshirtSize" value="L" class="form-check-input">
-                    <label for="sizeL">Large</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" id="sizeXL" name="tshirtSize" value="XL" class="form-check-input">
-                    <label for="sizeXL">X-Large</label>
-                </div>
-            </div>
-
             <div class="form-group">
                 <label for="dietaryRestrictions" class="form-label">Dietary Restrictions</label>
-                <textarea id="dietaryRestrictions" name="dietaryRestrictions" class="form-control" rows="3"
+                <textarea id="dietaryRestrictions" name="dietaryrestrictions" class="form-control" rows="3"
                     placeholder="Please let us know if you have any dietary restrictions or food allergies"></textarea>
             </div>
 
             <div class="form-group">
                 <div class="form-check">
-                    <input type="checkbox" id="codeOfConduct" name="codeOfConduct" class="form-check-input" required>
+                    <input type="checkbox" id="codeOfConduct" name="codeofconduct" class="form-check-input" value=true
+                        required>
                     <label for="codeOfConduct">I agree to the <a href="#" target="_blank">Code of Conduct</a>
                         *</label>
                 </div>
@@ -108,7 +72,7 @@
 
             <div class="form-group">
                 <div class="form-check">
-                    <input type="checkbox" id="newsletter" name="newsletter" class="form-check-input">
+                    <input type="checkbox" id="newsletter" name="newsletter" class="form-check-input" value=true>
                     <label for="newsletter">Subscribe to PyCon Togo newsletter</label>
                 </div>
             </div>

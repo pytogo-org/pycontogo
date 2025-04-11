@@ -35,9 +35,7 @@ a {
     transition: color 0.3s;
 }
 
-/* a:hover {
-    color: #218838;
-} */
+
 
 .btn {
     display: inline-block;
@@ -94,7 +92,7 @@ a {
 
 /* Header styles */
 header {
-    background-color: var(--white);
+    background-color: #f8f9fa;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block style %}
+<script src="../static/js/sponsor.js" defer></script>
+<link rel="stylesheet" href="../static/css/success.css">
+
+
+{% endblock %}
+{% block content %}
+<section class="">
+
+    <div id="" class="{{status}}-message">
+        <h3 class="h-volunteer"> {{ message[0] }}</h3>
+        <p>{{ message[1] }}</p>
+        {% if retry %}
+        <a href="{{ root }}" class="retry-button">Try Again</a>
+        {% endif %}
+
+    </div>
+
+
+</section>
+
+{% endblock %}

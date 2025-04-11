@@ -24,35 +24,40 @@
         <div class="talk-format">
             <div class="format-card" onclick="selectFormat(this, 'lightning')">
                 <h3 class="h-speacker">Lightning Talk</h3>
-                <p>10 minutes</p>
+                <p>5 minutes</p>
                 <p>Short and dynamic presentation on a specific topic</p>
             </div>
             <div class="format-card" onclick="selectFormat(this, 'standard')">
                 <h3 class="h-speacker">Standard Talk</h3>
-                <p>30 minutes</p>
+                <p>25 minutes</p>
                 <p>In-depth presentation with Q&A</p>
             </div>
             <div class="format-card" onclick="selectFormat(this, 'deep-dive')">
                 <h3 class="h-speacker">Deep Dive</h3>
-                <p>45 minutes</p>
+                <p>40 minutes</p>
                 <p>Detailed session on a complex topic</p>
             </div>
         </div>
 
-        <form id="speaker-form">
-            <input type="hidden" id="talk-format" name="format" value="">
+        <form id="speaker-form" action="/proposal" method="POST">
+            <select name="format" id="talk-format" class="required-field" required>
+                <option value="">Select a format </option>
+                <option value="lightning">Lightning Talk</option>   
+                <option value="standard">Standard Talk</option>
+                <option value="deep-dive">Deep Dive</option>
+            </select>
 
             <div class="form-row">
                 <div class="form-col">
                     <div class="form-group">
                         <label for="s-firstname" class="required-field">First Name</label>
-                        <input type="text" id="s-firstname" name="firstname" required>
+                        <input type="text" id="s-firstname" name="first_name" required>
                     </div>
                 </div>
                 <div class="form-col">
                     <div class="form-group">
                         <label for="s-lastname" class="required-field">Last Name</label>
-                        <input type="text" id="s-lastname" name="lastname" required>
+                        <input type="text" id="s-lastname" name="last_name" required>
                     </div>
                 </div>
             </div>
@@ -89,12 +94,12 @@
 
             <div class="form-group">
                 <label for="s-abstract" class="required-field">Talk Abstract</label>
-                <textarea id="s-abstract" name="abstract" required></textarea>
+                <textarea id="s-abstract" name="talk_abstract" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="s-outline">Talk Outline</label>
-                <textarea id="s-outline" name="outline" placeholder="Detail the main points you'll cover"></textarea>
+                <textarea id="s-outline" name="talk_outline" placeholder="Detail the main points you'll cover"></textarea>
             </div>
 
             <div class="form-group">
@@ -107,27 +112,21 @@
                 <label>Special Requirements</label>
                 <div class="checkbox-group">
                     <div class="checkbox-container">
-                        <input type="checkbox" id="s-technical" name="needs" value="technical">
+                        <input type="checkbox" id="s-technical" name="needs" value=true>
                         <label for="s-technical">Specific technical requirements</label>
                     </div>
                 </div>
             </div>
 
-            <div id="technical-details" class="form-group" style="display: none;">
+            <div id="technical-details" class="form-group" class="required-field" style="display: none;">
                 <label for="s-technical-details">Specify your technical requirements</label>
-                <textarea id="s-technical-details" name="technical-details"></textarea>
+                <textarea id="s-technical-details" name="technical_needs"></textarea>
             </div>
 
             <div class="text-center">
                 <button type="submit" class="btn">Submit My Proposal</button>
             </div>
         </form>
-
-        <div id="speaker-success" class="success-message">
-            <h3 class="h-speacker">Thank you for your proposal!</h3>
-            <p>We have received your talk proposal for PyCon Togo 2025. Our team will review it and contact you
-                soon.</p>
-        </div>
     </div>
 
     <div class="info-box">

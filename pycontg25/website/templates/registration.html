@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block style %}
+<script src="../static/js/main.js" defer></script>
+<script src="../static/js/register.js" defer></script>
+<link rel="stylesheet" href="../static/css/coming-soon.css">
+
+{% endblock %}
+
+{% block content %}
+
+<main class="coming-soon">
+    <div class="countdown-container">
+        <h2 class="countdown-title">Registratin opening in</h2>
+        <div class="countdown-timer" id="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days"></span>
+                <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours"></span>
+                <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes"></span>
+                <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds"></span>
+                <span class="countdown-label">Seconds</span>
+            </div>
+        </div>
+
+        <div class="notification">
+            Join the waitlist to be notified when registration opens!
+        </div>
+
+        <div class="cta-buttons">
+            <a href="{{ url_for('home')}}" class="btn">Back to home page</a>
+            <a href="/waitlist" class="secondary-btn">Join The waitlist</a>
+        </div>
+</main>
+<section class="page-content" id="program"></section>
+
+
+{% endblock %}

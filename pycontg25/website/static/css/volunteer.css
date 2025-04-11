@@ -149,16 +149,7 @@
             text-align: center;
         }
 
-        .success-message {
-            display: none;
-            background-color: #d4edda;
-            color: #155724;
-            border-radius: 4px;
-            padding: 20px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
+     
         .required-field::after {
             content: " *";
             color: #dc3545;
