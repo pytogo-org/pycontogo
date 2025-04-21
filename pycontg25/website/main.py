@@ -19,6 +19,9 @@ from datas import (
     get_something_email,
     insert_something,
 )
+from validator import (
+    is_valid_email,
+)
 from datetime import datetime, timedelta
 import os
 import json
@@ -47,6 +50,8 @@ async def favicon():
     return StaticFiles(directory=static_folder).get_response(
         path="favicon.ico", scope=None
     )
+
+
 # @app.get("/robots.txt", include_in_schema=False)
 # async def robots_txt():
 #     return StaticFiles(directory=static_folder).get_response(
@@ -54,7 +59,6 @@ async def favicon():
 #     )
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
-    
     return templates.TemplateResponse(
         request=request,
         name="home.html",
@@ -76,7 +80,7 @@ def shop_swag(request: Request):
 
 
 @app.get("/register", response_class=HTMLResponse)
-def register(request: Request):    
+def register(request: Request):
     print(f"Opening in {opening_in_days} days")
     if opening_in > timedelta(days=45):
         return templates.TemplateResponse(
@@ -102,8 +106,23 @@ def register(request: Request):
 
 @app.post("/register", response_class=HTMLResponse)
 def register_inquiry(request: Request, data: Annotated[RegistrationInquiry, Form()]):
+    if not is_valid_email(data.email):
+        return templates.TemplateResponse(
+            request=request,
+            name="success.html",
+            context={
+                "year": year,
+                "event_date": event_date_str,
+                "retry": True,
+                "root": "/register",
+                "status": "error",
+                "message": [
+                    "Oops! Something went wrong.",
+                    "Please enter a valid email address.",
+                ],
+            },
+        )
     existing_entry = get_something_email("registrations", data.email)
-    retry = False
     print(existing_entry)
     if existing_entry:
         return templates.TemplateResponse(
@@ -112,7 +131,7 @@ def register_inquiry(request: Request, data: Annotated[RegistrationInquiry, Form
             context={
                 "year": year,
                 "event_date": event_date_str,
-                "retry": retry,
+                "retry": False,
                 "status": "error",
                 "message": [
                     "Oops! Something went wrong.",
@@ -122,14 +141,14 @@ def register_inquiry(request: Request, data: Annotated[RegistrationInquiry, Form
         )
     successed = insert_something("registrations", data.dict())
     if not successed:
-        retry = True
         return templates.TemplateResponse(
             request=request,
             name="success.html",
             context={
                 "year": year,
                 "event_date": event_date_str,
-                "retry": retry,
+                "retry": True,
+                "root": "/register",
                 "status": "error",
                 "message": [
                     "Oops! Something went wrong.",
@@ -147,7 +166,7 @@ def register_inquiry(request: Request, data: Annotated[RegistrationInquiry, Form
         context={
             "year": year,
             "event_date": event_date_str,
-            "retry": retry,
+            "retry": False,
             "message": success_message,
             "status": "success",
         },
@@ -175,8 +194,23 @@ def volunteer(request: Request):
 @app.post("/volunteer", response_class=HTMLResponse)
 def volunteer_inquiry(request: Request, data: Annotated[VolunteerInquiry, Form()]):
     """"""
+    if not is_valid_email(data.email):
+        return templates.TemplateResponse(
+            request=request,
+            name="success.html",
+            context={
+                "year": year,
+                "event_date": event_date_str,
+                "retry": True,
+                "root": "/volunteer",
+                "status": "error",
+                "message": [
+                    "Oops! Something went wrong.",
+                    "Please enter a valid email address.",
+                ],
+            },
+        )
     existing_entry = get_something_email("volunteerinquiry", data.email)
-    retry = False
     if existing_entry:
         return templates.TemplateResponse(
             request=request,
@@ -184,7 +218,7 @@ def volunteer_inquiry(request: Request, data: Annotated[VolunteerInquiry, Form()
             context={
                 "year": year,
                 "event_date": event_date_str,
-                "retry": retry,
+                "retry": False,
                 "status": "error",
                 "message": [
                     "Oops! Something went wrong.",
@@ -195,14 +229,14 @@ def volunteer_inquiry(request: Request, data: Annotated[VolunteerInquiry, Form()
 
     successed = insert_something("volunteerinquiry", data.dict())
     if not successed:
-        retry = True
         return templates.TemplateResponse(
             request=request,
             name="success.html",
             context={
                 "year": year,
                 "event_date": event_date_str,
-                "retry": retry,
+                "retry": True,
+                "root": "/volunteer",
                 "status": "error",
                 "message": [
                     "Oops! Something went wrong.",
@@ -220,7 +254,7 @@ def volunteer_inquiry(request: Request, data: Annotated[VolunteerInquiry, Form()
         context={
             "year": year,
             "event_date": event_date_str,
-            "retry": retry,
+            "retry": False,
             "message": success_message,
             "status": "success",
         },
@@ -229,8 +263,23 @@ def volunteer_inquiry(request: Request, data: Annotated[VolunteerInquiry, Form()
 
 @app.post("/waitlist", response_class=HTMLResponse)
 def waitlist_inquiry(request: Request, data: Annotated[WaitlistInquiry, Form()]):
+    if not is_valid_email(data.email):
+        return templates.TemplateResponse(
+            request=request,
+            name="success.html",
+            context={
+                "year": year,
+                "event_date": event_date_str,
+                "retry": True,
+                "root": "/waitlist",
+                "status": "error",
+                "message": [
+                    "Oops! Something went wrong.",
+                    "Please enter a valid email address.",
+                ],
+            },
+        )
     existing_entry = get_something_email("waitlist", data.email)
-    retry = False
     if existing_entry:
         return templates.TemplateResponse(
             request=request,
@@ -238,7 +287,7 @@ def waitlist_inquiry(request: Request, data: Annotated[WaitlistInquiry, Form()])
             context={
                 "year": year,
                 "event_date": event_date_str,
-                "retry": retry,
+                "retry": False,
                 "status": "error",
                 "message": [
                     "Oops! Something went wrong.",
@@ -248,14 +297,14 @@ def waitlist_inquiry(request: Request, data: Annotated[WaitlistInquiry, Form()])
         )
     successed = insert_something("waitlist", data.dict())
     if not successed:
-        retry = True
         return templates.TemplateResponse(
             request=request,
             name="success.html",
             context={
                 "year": year,
                 "event_date": event_date_str,
-                "retry": retry,
+                "retry": True,
+                "root": "/waitlist",
                 "status": "error",
                 "message": [
                     "Oops! Something went wrong.",
@@ -273,7 +322,7 @@ def waitlist_inquiry(request: Request, data: Annotated[WaitlistInquiry, Form()])
         context={
             "year": year,
             "event_date": event_date_str,
-            "retry": retry,
+            "retry": False,
             "message": success_message,
             "status": "success",
         },
@@ -291,8 +340,23 @@ def proposal(request: Request):
 
 @app.post("/proposal", response_class=HTMLResponse)
 def proposal_inquiry(request: Request, data: Annotated[Proposal, Form()]):
+    if not is_valid_email(data.email):
+        return templates.TemplateResponse(
+            request=request,
+            name="success.html",
+            context={
+                "year": year,
+                "event_date": event_date_str,
+                "retry": True,
+                "root": "/proposal",
+                "status": "error",
+                "message": [
+                    "Oops! Something went wrong.",
+                    "Please enter a valid email address.",
+                ],
+            },
+        )
     successed = False
-    retry = False
 
     existing_entry = get_something_email("proposals", data.email)
     print(existing_entry)
@@ -303,7 +367,7 @@ def proposal_inquiry(request: Request, data: Annotated[Proposal, Form()]):
             context={
                 "year": year,
                 "event_date": event_date_str,
-                "retry": retry,
+                "retry": False,
                 "status": "error",
                 "message": [
                     "Oops! Something went wrong.",
@@ -314,14 +378,13 @@ def proposal_inquiry(request: Request, data: Annotated[Proposal, Form()]):
 
     successed = insert_something("proposals", data.dict())
     if not successed:
-        retry = True
         return templates.TemplateResponse(
             request=request,
             name="success.html",
             context={
                 "year": year,
                 "event_date": event_date_str,
-                "retry": retry,
+                "retry": True,
                 "root": "/proposal",
                 "status": "error",
                 "message": [
@@ -343,7 +406,7 @@ def proposal_inquiry(request: Request, data: Annotated[Proposal, Form()]):
         context={
             "year": year,
             "event_date": event_date_str,
-            "retry": retry,
+            "retry": False,
             "message": success_message,
             "status": "success",
         },
@@ -352,7 +415,6 @@ def proposal_inquiry(request: Request, data: Annotated[Proposal, Form()]):
 
 @app.get("/sponsor", response_class=HTMLResponse)
 def sponsor(request: Request):
-    
     headline = get_sponsortirtbytitle("headline")
     inkind = get_sponsortirtbytitle("inkind")
 
@@ -371,8 +433,24 @@ def sponsor(request: Request):
 
 @app.post("/sponsor", response_class=JSONResponse)
 def sponsor_inquiry(request: Request, data: Annotated[SponsorInquiry, Form()]):
+    if not is_valid_email(data.email):
+        return templates.TemplateResponse(
+            request=request,
+            name="success.html",
+            context={
+                "year": year,
+                "event_date": event_date_str,
+                "retry": True,
+                "root": "/sponsor",
+                "status": "error",
+                "message": [
+                    "Oops! Something went wrong.",
+                    "Please enter a valid email address.",
+                ],
+            },
+        )
     successed = False
-    retry = False
+
 
     # check if the company has more than 2 inquiries
     # if company_sponsor_inquiry.count == 2 and company_email.count == 0:
@@ -388,14 +466,14 @@ def sponsor_inquiry(request: Request, data: Annotated[SponsorInquiry, Form()]):
 
     successed = insert_something("sponsorinquiry", data.dict())
     if not successed:
-        retry = True
+        
         return templates.TemplateResponse(
             request=request,
             name="success.html",
             context={
                 "year": year,
                 "event_date": event_date_str,
-                "retry": retry,
+                "retry": True,
                 "root": "/sponsor",
                 "status": "error",
                 "message": [
@@ -411,7 +489,7 @@ def sponsor_inquiry(request: Request, data: Annotated[SponsorInquiry, Form()]):
         context={
             "year": year,
             "event_date": event_date_str,
-            "retry": retry,
+            "retry": False,
             "message": [
                 "Thank you, We appreciate your interest in sponsoring our event!",
                 "We have received your inquiry and will review it shortly.",
@@ -447,7 +525,7 @@ def contact(request: Request):
 
 @app.get("/waitlist", response_class=HTMLResponse)
 def waitlist(request: Request):
-    if  opening_in > timedelta(days=45):
+    if opening_in > timedelta(days=45):
         return templates.TemplateResponse(
             request=request,
             name="waitlist.html",
@@ -463,7 +541,6 @@ async def http_exception_handler(request: Request, exc: StarletteHTTPException):
         return templates.TemplateResponse(
             request=request, name="404.html", context={"year": year}, status_code=404
         )
-
 
 
 if __name__ == "__main__":

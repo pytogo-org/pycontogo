@@ -87,7 +87,7 @@
                 {% if sponsor_tier['title'] != "headline" and sponsor_tier['title'] != "inkind" %}
                 <div class="tier">
                     <h4 class="tier-name">{{ sponsor_tier['name'] }}</h4>
-                    <div class="tier-price">{{ sponsor_tier['amount_cfa'] }} FCFA (~${{ sponsor_tier['amount_usd'] }})</div>
+                    <div class="tier-price">{{ sponsor_tier['amount_cfa'] }} XOF (~${{ sponsor_tier['amount_usd'] }})</div>
                     <ul class="tier-features">
                         {% for advantage in sponsor_tier['advantages'] %}
                         <li>{{ advantage }}</li>

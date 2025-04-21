@@ -68,10 +68,10 @@
                 {% if sponsor_tier['title'] != "inkind" %}
                 {% if sponsor_tier["availability"] > 10 %}
                 <option value="{{sponsor_tier['title']}}">{{ sponsor_tier['name'] }} ({{ sponsor_tier['amount_cfa'] }}
-                    FCFA (~${{ sponsor_tier['amount_usd'] }})) - Unlimited</option>
+                    XOF (~${{ sponsor_tier['amount_usd'] }})) - Unlimited</option>
                 {% else %}
                 <option value="{{sponsor_tier['title']}}">{{ sponsor_tier['name'] }} ({{ sponsor_tier['amount_cfa'] }}
-                    FCFA (~${{ sponsor_tier['amount_usd'] }})) - {{ sponsor_tier['available'] }} Available</option>
+                    XOF (~${{ sponsor_tier['amount_usd'] }})) - {{ sponsor_tier['available'] }} Available</option>
                 {% endif %}
                 {% endif %}
                 {% endfor %}

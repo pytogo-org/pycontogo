@@ -38,7 +38,7 @@ input[type="text"]::placeholder {
     color: #95a5a6;
 }
 
-button {
+.waitlist-button {
     padding: 15px;
     background-color: #29853f;
     color: white;
@@ -50,7 +50,7 @@ button {
     font-weight: bold;
 }
 
-button:hover {
+.waitlist-button:hover {
     background-color: #29853f;
 }
 
@@ -59,7 +59,7 @@ button:hover {
         flex-direction: row;
     }
 
-    button {
+    .waitlist-button {
         width: 120px;
         flex-shrink: 0;
     }
@@ -75,7 +75,7 @@ button:hover {
         font-size: 24px;
     }
 
-    button {
+    .waitlist-button {
         width: 100%;
     }
 }

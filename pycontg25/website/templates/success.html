@@ -12,7 +12,7 @@
         <h3 class="h-volunteer"> {{ message[0] }}</h3>
         <p>{{ message[1] }}</p>
         {% if retry %}
-        <a href="{{ root }}" class="retry-button">Try Again</a>
+        <a href="{{ root }}" class="retry-button" id="retry">Try Again</a>
         {% endif %}
 
     </div>
@@ -20,4 +20,13 @@
 
 </section>
 
+
+<script>
+    const retryButton = document.getElementById('retry');
+    if (retryButton) {
+        retryButton.addEventListener('click', function (event) {
+            window.location.href = "{{ root }}";
+        });
+    }
+</script>
 {% endblock %}
