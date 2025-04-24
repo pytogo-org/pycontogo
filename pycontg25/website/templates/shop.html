@@ -7,64 +7,19 @@
 
         <div class="products-grid">
             <!-- T-Shirt Product -->
+             {% for swag in swags %}
             <div class="product-card">
                 <div class="product-image">
-                    <img src="../static/images/swags/tshirt.png" alt="PyCon Togo T-Shirt">
+                    <img src="../{{ swag.images[0] }}" alt="{{ swag.name }}">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">PyCon Togo 2025 T-Shirt</h3>
-                    <div class="product-price">$10.00</div>
-                    <p class="product-description">Show your Python pride with our official conference t-shirt
-                        featuring the PyCon Togo logo on high-quality cotton.</p>
+                    <h3 class="product-name">{{ swag.name }}</h3>
+                    <div class="product-price">{{ swag.price }} XOF (~{{ swag.priceDollar}} $)</div>
+                    <p class="product-description">{{ swag.description }}</p>
                     <a href="{{ url_for('coming_soon')}}" class="btn btn-primary">Add to Cart</a>
                 </div>
             </div>
-
-            <!-- Hoodie Product -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="../static/images/swags/hoodie.png " alt="PyCon Togo Hoodie">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">PyCon Togo Hoodie</h3>
-                    <div class="product-price">$25.00</div>
-                    <p class="product-description">Stay warm and stylish with our premium hoodie featuring
-                        embroidered PyCon Togo logo and African-inspired design elements.</p>
-                    <a href="{{ url_for('coming_soon')}}" class="btn btn-primary">Add to Cart</a>
-                </div>
-            </div>
-
-            <!-- Mug Product -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="../static/images/swags/thunder.png" alt="PyCon Togo Mug">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Python Coffee Mug</h3>
-                    <div class="product-price">$15.00</div>
-                    <p class="product-description">Enjoy your favorite beverage in this ceramic mug featuring the
-                        PyCon Togo logo and a witty Python programming joke.</p>
-                    <a href="{{ url_for('coming_soon')}}" class="btn btn-primary">Add to Cart</a>
-                </div>
-            </div>
-
-           
-         
-
-            <!-- Sticker Pack Product -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="../static/images/logo.png" alt="PyCon Togo Stickers">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Python Sticker Pack</h3>
-                    <div class="product-price">$8.00</div>
-                    <p class="product-description">Set of 10 vinyl stickers featuring Python logos, Togo-inspired
-                        designs, and programming humor to decorate your laptop.</p>
-                    <a href="{{ url_for('coming_soon')}}" class="btn btn-primary">Add to Cart</a>
-                </div>
-            </div>
-
+            {% endfor %}
            
         </div>
 

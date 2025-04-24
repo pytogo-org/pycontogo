@@ -13,7 +13,7 @@ from models import (
     RegistrationInquiry,
 )
 from datas import (
-    get_something_by_field,
+    get_swags,
     get_sponsorteirs,
     get_sponsortirtbytitle,
     get_something_email,
@@ -75,7 +75,7 @@ def shop_swag(request: Request):
     return templates.TemplateResponse(
         request=request,
         name="shop.html",
-        context={"year": year},
+        context={"year": year, "swags": get_swags()},
     )
 
 
