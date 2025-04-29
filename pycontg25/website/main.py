@@ -534,6 +534,29 @@ def waitlist(request: Request):
     response = RedirectResponse(url="/register")
     return response
 
+@app.get("/about-us", response_class=HTMLResponse)
+def about_us(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="about.html",
+        context={
+            "year": year,
+            "event_date": event_date_str,
+            "sponsor_tiers": sponsor_tiers,
+        },
+    )
+
+@app.get('/code-of-conduct', response_class=HTMLResponse)
+def code_of_conduct(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="CoC.html",
+        context={
+            "year": year,
+            "event_date": event_date_str,
+            "sponsor_tiers": sponsor_tiers,
+        },
+    )
 
 @app.exception_handler(StarletteHTTPException)
 async def http_exception_handler(request: Request, exc: StarletteHTTPException):

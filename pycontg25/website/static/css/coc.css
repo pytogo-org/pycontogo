@@ -1,0 +1,93 @@
+:root {
+    --primary-green: #27ae60;
+    --secondary-green: #e8f5e9;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --background-light: #f5f5f5;
+    --background-white: #ffffff;
+    --accent-yellow: #ffd700;
+}
+
+.coc-hero {
+    text-align: center;
+    margin-top: 50px;
+    
+    background-color: var(--background-light);
+}
+
+.coc-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.coc-hero p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--text-dark);
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-green);
+    margin: 0.5rem auto 0;
+}
+
+.content-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+
+.highlight {
+    background-color: var(--secondary-green);
+    border-left: 4px solid var(--primary-green);
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.contact-info {
+    background-color: var(--secondary-green);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.green-button {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .coc-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .coc-hero p {
+        font-size: 1rem;
+    }
+}
